@@ -1,19 +1,21 @@
-Apophenia is an open statistical library for working with data sets and statistical or simulation models. It provides functions on the same level as those of the typical stats package (such as OLS, probit, or singular value decomposition) but gives the user more flexibility to be creative in model-building. Being in C, it is often an order of magnitude faster when searching for optima or running MCMC chains. The core functions are written in C, but experience has shown them to be easy to bind to Python/Julia/Perl/Ruby/&c.
+Apophenia 是一个开放的统计库，用于处理数据集和统计或模拟模型。他提供和典型的统计数据包（例如OLS，probit，奇异值分解）相同级别的功能，但使用户在模型构建中更灵活。
+C在搜索最优或者运行MCMC链时会快一个数量级。核心函数使用C编写，但是经验表明它很容易绑定到Python/Julia/Perl/Ruby/&c。
 
-http://apophenia.info/gentle.html provides an overview of the basics of using the library. If you want to know more about the package, see the web site, http://apophenia.info, or have a look at the textbook from Princeton University Press that coevolved with Apophenia, downloadable from http://modelingwithdata.org .
+http://apophenia.info/gentle.html概述了使用库的基础知识。如果您想了解更多有关包的信息，请参阅网站http://apophenia.info, 或看看普林斯顿大学出版社与Apophenia合作编写的教科书，可从
+http://modelingwithdata.org下载。
 
 
-The quick summary for installation:
+快速安装摘要:
 
-∙ The library depends on the GNU Scientific Library and SQLite3. If you are using a system with a package manager of some sort, there is certainly a package for them. Be sure to include both the main package and the lib-, -dev, or -devel package. Sample package manager calls:
+∙ library 依赖于GNU Scientific Library和SQLite3. 如果您使用的系统具有某种包管理器，则肯定有一个包。保证同时拥有主包和 lib-, -dev, 或 -devel包. 包管理器调用示例:
 
-    sudo apt-get install make gcc libgsl0-dev libsqlite3-dev 
-or 
+    sudo apt-get install make gcc libgsl0-dev libsqlite3-dev （libgsl0-dev是GNU科学 Library (GSL)-开发包，libsqlite3-dev是SQLite3开发包）
+or
     sudo yum install make gcc gsl-devel libsqlite3x-devel
 or 
     sudo pacman -S make gcc gsl sqlite 
 
-∙ The prebuilt package, that has only basic prerequisites (no Autotools or m4) can be downloaded from another Git branch:
+∙ 预构建的包，只有基本先决条件（没有自动工具或 m4）可以从另一个 Git 分支下载:
 
     #Download the zip file, via wget or your preferred downloading method:
     wget https://github.com/b-k/Apophenia/archive/pkg.zip
@@ -25,7 +27,7 @@ or
     make
     sudo make install
 
-Or check out the branch via git:
+或通过 git 查看分支:
 
     git clone https://github.com/b-k/Apophenia.git
     cd Apophenia
@@ -34,16 +36,14 @@ Or check out the branch via git:
     make
     sudo make install
 
-∙ This master branch of the git repository requires Autotools, so it can build the
-package. Try (apt-get || yum install) autoconf automake libtool. If you have Autotools installed, then from this branch you can run:
+∙ git 存储库的这个主分支需要自动工具，因此它可以构建包. 尝试 (apt-get || yum install) 自动配置 自动编译libtool. 如果安装了自动工具，则从此分支可以运行:
 
     ./configure
     cd apophenia-1.0
     make 
     sudo make install
 
-∙ Find detailed setup instructions and some troubleshooting notes at
-http://apophenia.info/setup.html .
+∙ 在以下选项中查找详细的设置说明和一些故障排除说明：http://apophenia.info/setup.html 
 
 
 Thanks for your interest. I do hope that Apophenia helps you learn more from your data.
